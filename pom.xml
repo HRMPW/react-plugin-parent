@@ -15,6 +15,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <node.version>4.2.3</node.version>
     </properties>
 
     <build>
@@ -104,7 +105,7 @@
                                             <groupId>org.jenkins-ci.plugins</groupId>
                                             <artifactId>react-plugin-base</artifactId>
                                             <type>jar</type>
-                                            <includes>package.json,gulpfile.js</includes>
+                                            <includes>package.json,merge-config.js,gulpfile.js</includes>
                                             <outputDirectory>${project.build.directory}/frontend</outputDirectory>
                                         </artifactItem>
                                     </artifactItems>
@@ -122,7 +123,7 @@
                                     <target>
                                         <replace
                                             dir="${project.build.directory}/frontend"
-                                            includes="package.json,gulpfile.js">
+                                            includes="package.json,merge-config.js,gulpfile.js">
                                             <replacefilter
                                                 token="@pluginName@"
                                                 value="${project.artifactId}" />
